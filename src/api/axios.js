@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const API = axios.create({
-  baseURL: "http://localhost:7000/api/",
+  baseURL: "https://minutedesign-backend.onrender.com/api/",
 });
 
 export default API;
