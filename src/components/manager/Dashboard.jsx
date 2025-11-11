@@ -249,26 +249,26 @@ function TimesheetTable({ loading, error, records, onAction }) {
 
   return (
     <div className="overflow-x-auto">
-      <table className="w-full text-sm text-gray-700 border border-gray-200 rounded-lg overflow-hidden">
-        <thead className="bg-blue-50 text-blue-700 font-semibold">
+      <table className="w-full text-sm text-gray-700 border-collapse border border-gray-200 rounded-lg overflow-hidden">
+        <thead className="bg-blue-50 text-blue-700 font-semibold sticky top-0">
           <tr>
-            <th className="px-4 py-3 border-b">Employee</th>
-            <th className="px-4 py-3 border-b">Date</th>
-            <th className="px-4 py-3 border-b">Hours</th>
-            <th className="px-4 py-3 border-b">Status</th>
-            <th className="px-4 py-3 border-b text-center">Actions</th>
+            <th className="w-1/4 px-4 py-3 border-b text-left">Employee</th>
+            <th className="w-1/6 px-4 py-3 border-b text-left">Date</th>
+            <th className="w-1/6 px-4 py-3 border-b text-left">Hours</th>
+            <th className="w-1/6 px-4 py-3 border-b text-left">Status</th>
+            <th className="w-1/4 px-4 py-3 border-b text-left">Actions</th>
           </tr>
         </thead>
         <tbody>
           {records.map((rec) => (
-            <tr key={rec._id} className="hover:bg-blue-50 transition">
-              <td className="px-4 py-3">{rec.user?.name || "N/A"}</td>
-              <td className="px-4 py-3">
+            <tr key={rec._id} className="hover:bg-blue-50 transition border-b border-gray-100">
+              <td className="w-1/4 px-4 py-3 text-left">{rec.user?.name || "N/A"}</td>
+              <td className="w-1/6 px-4 py-3 text-left">
                 {new Date(rec.date).toLocaleDateString()}
               </td>
-              <td className="px-4 py-3">{rec.totalHours || 0} hrs</td>
-              <td className="px-4 py-3 font-medium">{rec.status}</td>
-              <td className="px-4 py-3 text-center flex justify-center gap-3">
+              <td className="w-1/6 px-4 py-3 text-left">{rec.totalHours || 0} hrs</td>
+              <td className="w-1/6 px-4 py-3 text-left font-medium">{rec.status}</td>
+              <td className="w-1/4 px-4 py-3 text-center flex justify-center gap-3">
                 {rec.status === "Pending" ? (
                   <>
                     <ActionBtn
