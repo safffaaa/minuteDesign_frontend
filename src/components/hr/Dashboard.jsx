@@ -213,8 +213,6 @@ export default function HRDashboard() {
           </p>
         </div>
 
-        <Attendance records={records} loading={loading} error={error} />
-
         {/* Summary Cards */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
           <SummaryCard
@@ -235,6 +233,8 @@ export default function HRDashboard() {
             value={loading ? "…" : String(pendingLeaves)}
           />
         </div>
+
+        <Attendance records={records} loading={loading} error={error} />
 
         {/* Payroll + Employee Management */}
         <div className="grid lg:grid-cols-3 gap-8">
